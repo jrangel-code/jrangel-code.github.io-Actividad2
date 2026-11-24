@@ -1,0 +1,402 @@
+/* =========================================================
+   Vértice | Portal de Servicios Tecnológicos
+   Hoja de estilos propia (se carga después de Bootstrap 5.3)
+   ========================================================= */
+
+/* ---------- 1. Tokens de diseño (Custom Properties) ---------- */
+:root {
+  /* Color: todos los pares texto/fondo cumplen contraste WCAG AA (>= 4.5:1) */
+  --primary-color: #0b4f94;      /* azul corporativo (7.9:1 sobre blanco) */
+  --primary-dark: #0b2545;
+  --accent: #c2410c;             /* naranja de acción (5.2:1 sobre blanco) */
+  --accent-dark: #9a3412;
+  --surface: #ffffff;
+  --surface-alt: #f1f5fa;
+  --text-main: #1b2533;
+  --text-muted: #4a5668;
+  --border-soft: #d6dfeb;
+
+  /* Espaciado: escala basada en una unidad de 8 px */
+  --spacing-unit: 0.5rem;
+  --space-2: calc(var(--spacing-unit) * 2);
+  --space-3: calc(var(--spacing-unit) * 3);
+  --space-4: calc(var(--spacing-unit) * 4);
+  --space-6: calc(var(--spacing-unit) * 6);
+  --space-10: calc(var(--spacing-unit) * 10);
+
+  /* Tipografía */
+  --font-main: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+
+  /* Forma y movimiento */
+  --radius: 1rem;
+  --shadow-soft: 0 2px 6px rgba(11, 37, 69, 0.08);
+  --shadow-raised: 0 14px 32px rgba(11, 37, 69, 0.18);
+  --transition: 220ms cubic-bezier(0.2, 0.7, 0.2, 1);
+
+  /* Conectar los tokens con las variables de Bootstrap */
+  --bs-primary: var(--primary-color);
+  --bs-primary-rgb: 11, 79, 148;
+  --bs-link-color: var(--primary-color);
+  --bs-link-color-rgb: 11, 79, 148;
+  --bs-link-hover-color: var(--primary-dark);
+  --bs-body-font-family: var(--font-main);
+  --bs-body-color: var(--text-main);
+  --bs-secondary-color: var(--text-muted);
+  --bs-border-radius: 0.6rem;
+  --bs-form-invalid-color: #b42318;
+  --bs-form-invalid-border-color: #b42318;
+}
+
+/* ---------- 2. Layout global con CSS Grid ---------- */
+body {
+  display: grid;
+  grid-template-rows: auto 1fr auto;  /* header | main | footer */
+  min-height: 100vh;
+  min-height: 100dvh;
+  font-family: var(--font-main);
+  color: var(--text-main);
+  background: var(--surface);
+}
+
+html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
+
+main:focus { outline: none; }
+
+/* ---------- 3. Accesibilidad ---------- */
+.skip-link {
+  position: absolute;
+  left: var(--space-2);
+  top: -4rem;
+  z-index: 2000;
+  padding: var(--space-2) var(--space-3);
+  background: var(--accent);
+  color: #fff;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: top var(--transition);
+}
+.skip-link:focus { top: var(--space-2); }
+
+/* Foco visible y consistente para teclado (WCAG 2.4.7 / 2.4.11) */
+:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+  box-shadow: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+}
+
+/* ---------- 4. Cabecera y navbar ---------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1030;
+  background: var(--primary-dark);
+  box-shadow: var(--shadow-soft);
+}
+
+.navbar {
+  --bs-navbar-color: #dbe6f3;           /* 13:1 sobre el fondo oscuro */
+  --bs-navbar-hover-color: #ffffff;
+  --bs-navbar-active-color: #ffffff;
+  padding-block: var(--space-2);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-unit);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.navbar-nav { gap: var(--spacing-unit); }
+
+.nav-link { border-radius: 0.5rem; padding-inline: var(--space-2) !important; }
+
+.nav-cta {
+  background: var(--accent);
+  color: #fff !important;
+  font-weight: 600;
+}
+.nav-cta:hover { background: var(--accent-dark); }
+
+/* ---------- 5. Hero (Grid + Flexbox) ---------- */
+.hero {
+  background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-color) 100%);
+  color: #fff;
+  padding-block: var(--space-10);
+}
+
+.hero-inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-6);
+  align-items: center;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #ffd8c2;
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 700;
+  line-height: 1.15;
+  margin-bottom: var(--space-3);
+}
+
+.hero .lead { color: #e3ecf7; max-width: 40rem; }
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-top: var(--space-4);
+}
+
+.hero-stats {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+.hero-stats li {
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-3);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+.hero-stats strong { font-size: 1.75rem; line-height: 1.1; }
+.hero-stats span { color: #e3ecf7; }
+
+.btn-accent {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: var(--accent);
+  --bs-btn-border-color: var(--accent);
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: var(--accent-dark);
+  --bs-btn-hover-border-color: var(--accent-dark);
+  --bs-btn-active-bg: var(--accent-dark);
+  --bs-btn-active-color: #fff;
+  font-weight: 600;
+}
+
+.btn-primary {
+  --bs-btn-bg: var(--primary-color);
+  --bs-btn-border-color: var(--primary-color);
+  --bs-btn-hover-bg: var(--primary-dark);
+  --bs-btn-hover-border-color: var(--primary-dark);
+  --bs-btn-active-bg: var(--primary-dark);
+  font-weight: 600;
+}
+.btn-outline-primary {
+  --bs-btn-color: var(--primary-color);
+  --bs-btn-border-color: var(--primary-color);
+  --bs-btn-hover-bg: var(--primary-color);
+  --bs-btn-hover-border-color: var(--primary-color);
+  --bs-btn-active-bg: var(--primary-dark);
+}
+
+/* ---------- 6. Secciones ---------- */
+.section { padding-block: var(--space-10); }
+.section-alt { background: var(--surface-alt); }
+
+.section-header { margin-bottom: var(--space-4); max-width: 42rem; }
+.section-header h2, #titulo-multimedia, #titulo-contacto { font-weight: 700; }
+.section-header p { color: var(--text-muted); margin: 0; }
+
+/* ---------- 7. Tarjetas de servicios ---------- */
+.service-card {
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+}
+.service-card:hover,
+.service-card:focus-within {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-raised);
+  border-color: var(--primary-color);
+}
+.service-card .card-body { padding: var(--space-3); }
+.service-card .card-footer {
+  background: transparent;
+  border-top: 1px solid var(--border-soft);
+  padding: var(--space-2) var(--space-3);
+}
+.service-card .card-footer a { font-weight: 600; text-decoration: none; }
+.service-card .card-footer a::after { border-radius: var(--radius); }
+
+.service-icon {
+  display: inline-grid;
+  place-items: center;
+  width: 3rem;
+  height: 3rem;
+  margin-bottom: var(--space-2);
+  border-radius: 0.75rem;
+  background: var(--surface-alt);
+  font-size: 1.5rem;
+}
+
+/* ---------- 8. Dashboard de monitoreo (CSS Grid con áreas) ---------- */
+.dashboard {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "chart"
+    "status";
+  gap: var(--space-3);
+}
+.panel-chart { grid-area: chart; }
+.panel-status { grid-area: status; }
+
+.panel {
+  background: var(--surface);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius);
+  padding: var(--space-3);
+  box-shadow: var(--shadow-soft);
+}
+
+.panel-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-2);
+}
+
+/* aspect-ratio reserva el espacio y evita saltos de diseño (CLS) */
+.canvas-wrap {
+  position: relative;
+  aspect-ratio: 5 / 2;
+  width: 100%;
+}
+.canvas-wrap canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 0.6rem;
+  background: #0b2545;
+}
+
+.kpis {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin: 0 0 var(--space-2);
+}
+.kpis > div {
+  flex: 1 1 7rem;
+  padding: var(--space-2);
+  border-radius: 0.75rem;
+  background: var(--surface-alt);
+}
+.kpis dt { font-size: 0.85rem; font-weight: 600; color: var(--text-muted); }
+.kpis dd { margin: 0; font-size: 1.5rem; font-weight: 700; color: var(--primary-dark); }
+
+.estado {
+  margin: 0;
+  padding: var(--space-2);
+  border-radius: 0.75rem;
+  font-weight: 600;
+  border-left: 6px solid var(--text-muted);
+  background: var(--surface-alt);
+}
+.estado.ok { border-color: #15803d; color: #14532d; background: #e8f6ed; }
+.estado.alerta { border-color: var(--accent); color: #7c2d12; background: #fdeee6; }
+
+/* ---------- 9. Multimedia ---------- */
+.video-figure { margin: 0; }
+.video-figure video {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius);
+  background: #000;
+  box-shadow: var(--shadow-raised);
+}
+.video-figure figcaption { margin-top: var(--spacing-unit); font-size: 0.9rem; color: var(--text-muted); }
+
+/* ---------- 10. Formulario ---------- */
+.contact-info { margin-top: var(--space-3); line-height: 1.7; font-style: normal; }
+
+.form-label { font-weight: 600; }
+
+.form-control:focus,
+.form-check-input:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 0.25rem rgba(11, 79, 148, 0.25);
+}
+
+/* Texto de error más oscuro que el rojo por defecto de Bootstrap para asegurar contraste AA */
+.invalid-feedback { color: #b42318; font-weight: 500; }
+.form-control.is-invalid, .was-validated .form-control:invalid { border-color: #b42318; }
+
+.was-validated .form-control:not(:required):placeholder-shown {
+  /* Un campo opcional vacío no se marca como válido ni inválido */
+  border-color: var(--bs-border-color);
+  background-image: none;
+  padding-right: 0.75rem;
+}
+
+.form-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+/* ---------- 11. Pie de página ---------- */
+.site-footer {
+  background: var(--primary-dark);
+  color: #dbe6f3;
+  padding-block: var(--space-4);
+}
+.footer-inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.footer-links {
+  display: flex;
+  gap: var(--space-3);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.footer-links a { color: #fff; }
+
+/* ---------- 12. Puntos de quiebre (Mobile-First: se añade complejidad hacia arriba) ---------- */
+@media (min-width: 768px) {
+  .hero-stats { flex-direction: row; }
+  .hero-stats li { flex: 1; }
+  .footer-inner { flex-direction: row; align-items: center; }
+}
+
+@media (min-width: 992px) {
+  .hero-inner { grid-template-columns: 1.6fr 1fr; }
+  .hero-stats { flex-direction: column; }
+
+  .dashboard {
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas: "chart status";
+  }
+  .kpis { flex-direction: column; }
+}

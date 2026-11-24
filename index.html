@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vértice | Portal de Servicios Tecnológicos</title>
+  <meta name="description" content="Portal corporativo de Vértice Servicios Tecnológicos: soporte TI, redes, nube, ciberseguridad y monitoreo de infraestructura en tiempo real.">
+  <meta name="theme-color" content="#0b4f94">
+
+  <!-- OpenGraph: vista previa al compartir el enlace -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_VE">
+  <meta property="og:site_name" content="Vértice Servicios Tecnológicos">
+  <meta property="og:title" content="Vértice | Portal de Servicios Tecnológicos">
+  <meta property="og:description" content="Soporte, redes, nube y ciberseguridad para empresas, con monitoreo 24/7.">
+  <meta property="og:image" content="img/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Logotipo de Vértice sobre fondo azul con el texto Servicios Tecnológicos">
+
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+
+  <!-- Tipografía optimizada: preconexión + display=swap para no bloquear el renderizado -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
+
+  <!-- Bootstrap 5.3 servido localmente + hoja de estilos propia -->
+  <link rel="stylesheet" href="vendor/bootstrap.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+
+  <!-- Scripts diferidos: no bloquean el análisis del HTML -->
+  <script src="vendor/bootstrap.bundle.min.js" defer></script>
+  <script src="js/main.js" defer></script>
+  <script src="js/canvas.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido principal</a>
+
+  <header class="site-header">
+    <nav class="navbar navbar-expand-lg navbar-dark" aria-label="Navegación principal">
+      <div class="container">
+        <a class="navbar-brand brand" href="#inicio">
+          <img src="img/favicon.svg" alt="" width="32" height="32">
+          <span>Vértice</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal"
+                aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir o cerrar el menú de navegación">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="menuPrincipal">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="#servicios">Servicios</a></li>
+            <li class="nav-item"><a class="nav-link" href="#monitoreo">Monitoreo</a></li>
+            <li class="nav-item"><a class="nav-link" href="#multimedia">Conózcanos</a></li>
+            <li class="nav-item"><a class="nav-link nav-cta" href="#contacto">Solicitar cotización</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="contenido" tabindex="-1">
+    <!-- HERO -->
+    <section id="inicio" class="hero" aria-labelledby="titulo-hero">
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <p class="eyebrow">Servicios gestionados de TI</p>
+          <h1 id="titulo-hero">Tecnología que funciona, para que su empresa no se detenga</h1>
+          <p class="lead">Soporte técnico, redes, nube y ciberseguridad con monitoreo continuo de su infraestructura y un solo punto de contacto.</p>
+          <div class="hero-actions">
+            <a href="#contacto" class="btn btn-accent btn-lg">Solicitar cotización</a>
+            <a href="#servicios" class="btn btn-outline-light btn-lg">Ver servicios</a>
+          </div>
+        </div>
+        <ul class="hero-stats" aria-label="Indicadores de servicio">
+          <li><strong>99,9 %</strong><span>disponibilidad garantizada</span></li>
+          <li><strong>&lt; 15 min</strong><span>tiempo de primera respuesta</span></li>
+          <li><strong>24/7</strong><span>monitoreo de red</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- SERVICIOS (rejilla Bootstrap de 12 columnas, Mobile-First) -->
+    <section id="servicios" class="section" aria-labelledby="titulo-servicios">
+      <div class="container">
+        <header class="section-header">
+          <h2 id="titulo-servicios">Nuestros servicios</h2>
+          <p>Planes modulares que crecen con su operación.</p>
+        </header>
+        <div class="row g-4">
+          <div class="col-12 col-md-6 col-lg-4">
+            <article class="card service-card h-100">
+              <div class="card-body">
+                <span class="service-icon" aria-hidden="true">🛠️</span>
+                <h3 class="card-title h5">Mesa de ayuda</h3>
+                <p class="card-text">Atención de incidencias por correo, teléfono y acceso remoto, con acuerdos de nivel de servicio medibles.</p>
+              </div>
+              <footer class="card-footer"><a href="#contacto" class="stretched-link" data-servicio="Mesa de ayuda">Cotizar mesa de ayuda</a></footer>
+            </article>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4">
+            <article class="card service-card h-100">
+              <div class="card-body">
+                <span class="service-icon" aria-hidden="true">🌐</span>
+                <h3 class="card-title h5">Redes e infraestructura</h3>
+                <p class="card-text">Diseño, cableado estructurado, Wi-Fi corporativo, VPN entre sedes y administración de switches y firewalls.</p>
+              </div>
+              <footer class="card-footer"><a href="#contacto" class="stretched-link" data-servicio="Redes e infraestructura">Cotizar redes</a></footer>
+            </article>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4">
+            <article class="card service-card h-100">
+              <div class="card-body">
+                <span class="service-icon" aria-hidden="true">☁️</span>
+                <h3 class="card-title h5">Nube y Microsoft 365</h3>
+                <p class="card-text">Migración de correo y archivos, gestión de licencias, identidades y políticas de seguridad en la nube.</p>
+              </div>
+              <footer class="card-footer"><a href="#contacto" class="stretched-link" data-servicio="Nube y Microsoft 365">Cotizar nube</a></footer>
+            </article>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4">
+            <article class="card service-card h-100">
+              <div class="card-body">
+                <span class="service-icon" aria-hidden="true">🔒</span>
+                <h3 class="card-title h5">Ciberseguridad</h3>
+                <p class="card-text">Antivirus gestionado, copias de seguridad, auditorías de vulnerabilidades y concienciación del personal.</p>
+              </div>
+              <footer class="card-footer"><a href="#contacto" class="stretched-link" data-servicio="Ciberseguridad">Cotizar ciberseguridad</a></footer>
+            </article>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4">
+            <article class="card service-card h-100">
+              <div class="card-body">
+                <span class="service-icon" aria-hidden="true">📈</span>
+                <h3 class="card-title h5">Monitoreo 24/7</h3>
+                <p class="card-text">Supervisión continua de servidores, enlaces y aplicaciones con alertas tempranas antes de que el usuario note la falla.</p>
+              </div>
+              <footer class="card-footer"><a href="#contacto" class="stretched-link" data-servicio="Monitoreo 24/7">Cotizar monitoreo</a></footer>
+            </article>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4">
+            <article class="card service-card h-100">
+              <div class="card-body">
+                <span class="service-icon" aria-hidden="true">💻</span>
+                <h3 class="card-title h5">Desarrollo web</h3>
+                <p class="card-text">Portales corporativos, intranets y aplicaciones internas accesibles, rápidas y adaptadas a móviles.</p>
+              </div>
+              <footer class="card-footer"><a href="#contacto" class="stretched-link" data-servicio="Desarrollo web">Cotizar desarrollo</a></footer>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MONITOREO: layout con CSS Grid (article + aside) -->
+    <section id="monitoreo" class="section section-alt" aria-labelledby="titulo-monitoreo">
+      <div class="container">
+        <header class="section-header">
+          <h2 id="titulo-monitoreo">Monitoreo de red en tiempo real</h2>
+          <p>Demostración del panel que reciben nuestros clientes. Los datos son simulados.</p>
+        </header>
+        <div class="dashboard">
+          <article class="panel panel-chart" aria-labelledby="titulo-grafico">
+            <div class="panel-head">
+              <h3 id="titulo-grafico" class="h6 mb-0">Latencia del enlace principal (ms)</h3>
+              <button type="button" class="btn btn-sm btn-outline-primary" id="btnPausa" aria-pressed="false">Pausar</button>
+            </div>
+            <div class="canvas-wrap">
+              <canvas id="graficoLatencia" width="800" height="320" role="img"
+                      aria-label="Gráfico de líneas animado con la latencia del enlace principal en milisegundos durante los últimos segundos">
+                Su navegador no soporta el elemento canvas. La latencia promedio actual se muestra en el panel de estado.
+              </canvas>
+            </div>
+            <p class="small text-body-secondary mt-2 mb-0">El gráfico se dibuja a 60 cuadros por segundo con <code>requestAnimationFrame</code>. Línea discontinua: umbral de alerta (80 ms).</p>
+          </article>
+
+          <aside class="panel panel-status" aria-labelledby="titulo-estado">
+            <h3 id="titulo-estado" class="h6">Estado del servicio</h3>
+            <dl class="kpis">
+              <div><dt>Latencia actual</dt><dd><span id="kpiActual">--</span> ms</dd></div>
+              <div><dt>Promedio</dt><dd><span id="kpiPromedio">--</span> ms</dd></div>
+              <div><dt>Máximo</dt><dd><span id="kpiMaximo">--</span> ms</dd></div>
+            </dl>
+            <p class="estado" id="estadoEnlace" role="status" aria-live="polite">Calculando estado…</p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- MULTIMEDIA -->
+    <section id="multimedia" class="section" aria-labelledby="titulo-multimedia">
+      <div class="container">
+        <div class="row g-4 align-items-center">
+          <div class="col-12 col-lg-5">
+            <h2 id="titulo-multimedia">Conózcanos en menos de 20 segundos</h2>
+            <p>Un breve recorrido por la forma en que trabajamos: diagnóstico, implementación y acompañamiento continuo.</p>
+            <p class="small text-body-secondary">El video incluye subtítulos en español. Puede activarlos desde el botón de subtítulos del reproductor.</p>
+          </div>
+          <div class="col-12 col-lg-7">
+            <figure class="video-figure">
+              <video controls preload="none" width="1280" height="720" poster="media/poster.jpg"
+                     aria-describedby="descVideo">
+                <source src="media/presentacion.webm" type="video/webm">
+                <source src="media/presentacion.mp4" type="video/mp4">
+                <track kind="captions" src="media/subtitulos-es.vtt" srclang="es" label="Español" default>
+                Su navegador no reproduce video HTML5. <a href="media/presentacion.mp4">Descargue el video en MP4</a>.
+              </video>
+              <figcaption id="descVideo">Video institucional: metodología de trabajo de Vértice en tres pasos.</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACTO / COTIZACIÓN -->
+    <section id="contacto" class="section section-alt" aria-labelledby="titulo-contacto">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-12 col-lg-4">
+            <h2 id="titulo-contacto">Solicite una cotización</h2>
+            <p>Cuéntenos qué necesita y le responderemos en un máximo de un día hábil.</p>
+            <address class="contact-info">
+              <strong>Vértice Servicios Tecnológicos</strong><br>
+              Caracas, Venezuela<br>
+              <a href="mailto:contacto@vertice.example">contacto@vertice.example</a><br>
+              <a href="tel:+582125550100">+58 212 555 0100</a>
+            </address>
+          </div>
+          <div class="col-12 col-lg-8">
+            <form id="formCotizacion" class="panel needs-validation" novalidate aria-describedby="notaCampos">
+              <p id="notaCampos" class="small text-body-secondary">Los campos marcados con <span aria-hidden="true">*</span><span class="visually-hidden">asterisco</span> son obligatorios.</p>
+              <div class="row g-3">
+                <div class="col-12 col-md-6">
+                  <label for="nombre" class="form-label">Nombre y apellido *</label>
+                  <input type="text" class="form-control" id="nombre" name="nombre" autocomplete="name"
+                         required minlength="3" maxlength="60" pattern="[A-Za-zÁÉÍÓÚáéíóúÑñÜü ]+"
+                         aria-describedby="nombreError">
+                  <div id="nombreError" class="invalid-feedback">Escriba su nombre (solo letras, entre 3 y 60 caracteres).</div>
+                </div>
+                <div class="col-12 col-md-6">
+                  <label for="empresa" class="form-label">Empresa</label>
+                  <input type="text" class="form-control" id="empresa" name="empresa" autocomplete="organization" maxlength="80" placeholder="Opcional">
+                </div>
+                <div class="col-12 col-md-6">
+                  <label for="correo" class="form-label">Correo electrónico *</label>
+                  <input type="email" class="form-control" id="correo" name="correo" autocomplete="email" required maxlength="100"
+                         pattern="[^@\s]+@[^@\s]+\.[A-Za-z]{2,}"
+                         aria-describedby="correoError">
+                  <div id="correoError" class="invalid-feedback">Ingrese un correo válido, por ejemplo nombre@empresa.com.</div>
+                </div>
+                <div class="col-12 col-md-6">
+                  <label for="telefono" class="form-label">Teléfono *</label>
+                  <input type="tel" class="form-control" id="telefono" name="telefono" autocomplete="tel" inputmode="numeric"
+                         required pattern="0(2|4)[0-9]{9}" minlength="11" maxlength="11" placeholder="04141234567"
+                         aria-describedby="telefonoAyuda telefonoError">
+                  <div id="telefonoAyuda" class="form-text">11 dígitos, sin espacios ni guiones.</div>
+                  <div id="telefonoError" class="invalid-feedback">El teléfono debe tener 11 dígitos y comenzar por 02 o 04.</div>
+                </div>
+                <div class="col-12 col-md-6">
+                  <label for="servicio" class="form-label">Servicio de interés *</label>
+                  <input class="form-control" list="listaServicios" id="servicio" name="servicio" required maxlength="60"
+                         aria-describedby="servicioAyuda servicioError">
+                  <datalist id="listaServicios">
+                    <option value="Mesa de ayuda">
+                    <option value="Redes e infraestructura">
+                    <option value="Nube y Microsoft 365">
+                    <option value="Ciberseguridad">
+                    <option value="Monitoreo 24/7">
+                    <option value="Desarrollo web">
+                  </datalist>
+                  <div id="servicioAyuda" class="form-text">Elija una sugerencia o escriba otro servicio.</div>
+                  <div id="servicioError" class="invalid-feedback">Indique el servicio que le interesa.</div>
+                </div>
+                <div class="col-12 col-md-6">
+                  <label for="equipos" class="form-label">Cantidad de equipos *</label>
+                  <input type="number" class="form-control" id="equipos" name="equipos" required min="1" max="5000" step="1"
+                         aria-describedby="equiposError">
+                  <div id="equiposError" class="invalid-feedback">Indique un número entre 1 y 5000.</div>
+                </div>
+                <div class="col-12">
+                  <label for="mensaje" class="form-label">Describa su necesidad *</label>
+                  <textarea class="form-control" id="mensaje" name="mensaje" rows="4" required minlength="20" maxlength="500"
+                            aria-describedby="mensajeContador mensajeError"></textarea>
+                  <div id="mensajeContador" class="form-text" aria-live="polite">0 / 500 caracteres (mínimo 20).</div>
+                  <div id="mensajeError" class="invalid-feedback">Escriba al menos 20 caracteres.</div>
+                </div>
+                <div class="col-12">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="acepto" name="acepto" required aria-describedby="aceptoError">
+                    <label class="form-check-label" for="acepto">Acepto que Vértice me contacte para esta cotización *</label>
+                    <div id="aceptoError" class="invalid-feedback">Debe aceptar para poder enviar la solicitud.</div>
+                  </div>
+                </div>
+                <div class="col-12 form-actions">
+                  <button type="submit" class="btn btn-primary btn-lg">Enviar solicitud</button>
+                  <button type="reset" class="btn btn-link">Limpiar formulario</button>
+                </div>
+              </div>
+              <div id="mensajeEnvio" class="alert mt-3 d-none" role="status" aria-live="polite"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="mb-0">&copy; <span id="anio">2026</span> Vértice Servicios Tecnológicos (empresa ficticia, proyecto académico).</p>
+      <nav aria-label="Enlaces del pie de página">
+        <ul class="footer-links">
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#monitoreo">Monitoreo</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>
